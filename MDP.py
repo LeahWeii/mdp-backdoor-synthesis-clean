@@ -281,7 +281,7 @@ class MDP:
         for _ in range(max_steps):
             # st_index = self.states.index(st)
             act = random.choices(self.actlist, weights=policy.policy[sys_st], k=1)[0]
-            next_state, step_reward = self.step(st, act)
+            next_state, step_reward = self.step(sys_st, act)
             sys_next_state = next_state  # observation.
             sys_act = act
             sys_traj.append((sys_st, sys_act, sys_next_state, step_reward))
