@@ -172,7 +172,7 @@ if __name__ == "__main__":
     #plot_from_pickled_results('./gridworld_ex/epsilon_0.1', episodes=10000, lb=10.15)
     # plot_final_from_pickled_results('./gridworld_ex/')
     # gridworld, V_def, policy = createGridWorldBarrier_new2()
-    stoPar = 0.3
+    stoPar = 0.0
     gridworld = createGridWorldBarrier_new2(stoPar)
     st = gridworld.states
 

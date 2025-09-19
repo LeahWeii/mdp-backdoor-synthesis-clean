@@ -29,7 +29,7 @@ class GridWorld(MDPwEmission):
 
 
     def is_terminal(self, state):
-        if state in self.F or state in self.G or state == (-1, -1) :
+        if state in self.F or state in self.G or state in self.obstacles or state == (-1, -1) :
             return True
         else:
             return False
@@ -206,6 +206,9 @@ class GridWorld(MDPwEmission):
             elif st in self.G:
                 for act in self.actions:
                     leader_reward[st][act] = 20.0
+            elif st in self.obstacles:
+                for act in self.actions:
+                    leader_reward[st][act] = -10.0
             else:
                 for act in self.actions:
                     leader_reward[st][act] = 0.0
